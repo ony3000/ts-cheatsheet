@@ -1,6 +1,6 @@
 # Array
 
-선언하는 변수의 타입이 배열임을 나타낼 때, 타입명[] 또는 Array<타입명>을 사용한다.
+선언하는 변수의 타입이 배열임을 나타낼 때, `타입명[]` 또는 `Array<타입명>`을 사용한다.
 
 ```typescript
 const firstNumberArray: number[] = [1, 11, 111];
