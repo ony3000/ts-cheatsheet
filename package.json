@@ -3,5 +3,9 @@
   "version": "0.1.0",
   "description": "Use cases of object types are summarized.",
   "repository": "https://github.com/ony3000/ts-cheatsheet.git",
-  "author": "Hyeonjong <nianelo4@gmail.com>"
+  "author": "Hyeonjong <nianelo4@gmail.com>",
+  "devDependencies": {
+    "@tsconfig/node16": "^1.0.2",
+    "typescript": "^4.6.4"
+  }
 }
