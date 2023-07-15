@@ -62,7 +62,28 @@ type DateSegment = typeof oneDay[number];
 type RowsPerPageOptions = typeof rowsPerPageOptions[number];
 ```
 
-호출 결과에 대해 타입 단언이 필요할 수도 있는 사용 예시들은 다음과 같다.
+---
+
+타입 단언이 필요할 수도 있는 사용 예시들은 다음과 같다.
+
+- 배열 원소 참조: 해당 원소의 존재 여부를 확신할 수 없을 때
+
+  ```typescript
+  const randomArray: number[] = [...Array(3)].map(() => Math.random()).filter((value) => value < 0.5);
+
+
+  // Bad; 원소의 존재 여부와 무관하게 number 타입으로 추론된다.
+  const maybeNumber1 = randomArray[0];
+
+  // Bad; 선언할 때만 number | undefined 타입으로 추론되고, 이후 참조에서는 number 타입으로 추론된다.
+  const maybeNumber2: number | undefined = randomArray[0];
+
+  // 타입 단언 사용
+  const maybeNumber3 = randomArray[0] as number | undefined;
+
+  // 대괄호 표기법 대신 at() 메서드 사용
+  const maybeNumber4 = randomArray.at(0);
+  ```
 
 - `Array()` 생성자: 원소의 개수를 알고 있는 빈 배열을 생성할 때
 
